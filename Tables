@@ -1,0 +1,24 @@
+"CREATE TABLE Users 
+    ( 
+      UserID          INT(11)     NOT NULL                                           AUTO_INCREMENT  PRIMARY KEY ,
+      UserName    VARCHAR(32)     NOT NULL   UNIQUE         COLLATE utf8_general_ci ,
+      Password    VARCHAR(255)    NOT NULL                  COLLATE utf8_general_ci ,
+      Email       VARCHAR(32)     NOT NULL   UNIQUE         COLLATE utf8_general_ci ,
+      FullName    VARCHAR(32)     NOT NULL                  COLLATE utf8_general_ci ,                 
+      GroupID     INT(11)         NOT NULL                                                                             DEFAULT 0,
+      TrustStatus INT(11)         NOT NULL                                                                             DEFAULT 0,
+      RegisterStatus INT(11)      NOT NULL                                                                             DEFAULT 0     
+    )"
+
+
+    "CREATE TABLE Categories 
+    ( 
+      ID          SMALLINT(11)    NOT NULL                                                AUTO_INCREMENT  PRIMARY KEY ,
+      Name        VARCHAR(255)    NOT NULL   UNIQUE         COLLATE utf8_general_ci ,
+      Description VARCHAR(255)    NOT NULL                  COLLATE utf8_general_ci ,
+      Ordering    INT             NOT NULL , 
+      FullName    VARCHAR(32)     NOT NULL                  COLLATE utf8_general_ci ,                 
+      VISIBILITY  TINYINT         NOT NULL                                                                             DEFAULT 0,
+      ALLOWComment TINYINT        NOT NULL                                                                             DEFAULT 0,
+      ALLOWADS     TINYINT        NOT NULL                                                                             DEFAULT 0     
+    )"

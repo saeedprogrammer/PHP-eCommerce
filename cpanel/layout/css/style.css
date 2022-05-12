@@ -1,0 +1,17 @@
+.login
+{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+.login-form-control
+{
+    margin-bottom: 5px;
+}
+
+.stat
+{
+    background-color: #eee;
+    border: 1px solid #ccc;
+}

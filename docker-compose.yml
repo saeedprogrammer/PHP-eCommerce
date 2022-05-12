@@ -1,0 +1,34 @@
+version: '3.8'
+services:
+  php-environment:
+    container_name: cli
+    image: php
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - data-base
+    links:
+      - data-base
+    volumes:
+      - '.:/var/www/html/'
+    ports:
+      - '8080:80'
+    networks:
+      - eCommerce_project_network
+  data-base:
+    container_name: data-base
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: eCOMMERCE_APP_DB
+      MYSQL_USER: MYSQL_USER
+      MYSQL_PASSWORD: MYSQL_PASSWORD
+    ports:
+      - '9909:3306'
+    networks:
+      - eCommerce_project_network
+
+networks:
+  eCommerce_project_network:
